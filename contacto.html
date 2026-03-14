@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contactos | Garage 70</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-contacto">
+
+    <header>
+        <div class="logo-container">
+            <a href="index.html"><img src="assets/logo/logo-garage70.png" alt="Garage 70 Logo" class="logo"></a>
+        </div>
+        <div class="menu-btn" id="menuBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <nav class="sidebar" id="sidebar">
+        <ul>
+            <li><a href="servicios.html">Nuestros Servicios</a></li>
+            <li><a href="quienes-somos.html">Quiénes Somos</a></li>
+            <li><a href="productos.html">Nuestros Productos</a></li>
+            <li><a href="contacto.html">Contactos</a></li>
+        </ul>
+    </nav>
+
+    <main class="contacto-section">
+        <div class="contacto-wrapper">
+            
+            <div class="contacto-info">
+                <h2>CONTACTOS</h2>
+                
+                <div class="info-bloque">
+                    <h3>PERGAMINO</h3>
+                    <p>UGARTE 1025 | 2477 665125</p>
+                </div>
+
+                <div class="info-bloque">
+                    <h3>E-MAIL</h3>
+                    <p>Garage70@gmail.com</p>
+                </div>
+
+                <div class="info-bloque">
+                    <h3>SEGUINOS</h3>
+                    <div class="redes-grid">
+                        <a href="#" class="icono-red"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="icono-red"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#" class="icono-red"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="icono-red"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contacto-formulario">
+                <form action="https://formsubmit.co/Garage70@gmail.com" method="POST">
+                    <input type="hidden" name="_subject" value="¡Nuevo mensaje desde la web de Garage 70!">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://www.garage70.com.ar/contacto.html">
+
+                    <input type="text" name="nombre" class="form-input" placeholder="NOMBRE" required>
+                    <input type="tel" name="telefono" class="form-input" placeholder="TELEFONO" required>
+                    <input type="email" name="email" class="form-input" placeholder="E-MAIL" required>
+                    <textarea name="mensaje" class="form-input textarea-input" placeholder="MENSAJE" required></textarea>
+                    
+                    <button type="submit" class="btn-submit">ENVIAR</button>
+                </form>
+            </div>
+
+        </div>
+    </main>
+
+    <a href="https://wa.me/12345678" target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
