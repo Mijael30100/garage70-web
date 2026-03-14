@@ -3,13 +3,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial', sans-serif; /* Podés cambiarlo por la fuente que uses */
+    font-family: 'Arial', sans-serif;
+    /* Podés cambiarlo por la fuente que uses */
 }
 
 /* Fondos dinámicos por página */
 body.bg-inicio {
     /* Reemplazá con la ruta de tu foto de fondo */
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../assets/img/fondo-inicio.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../assets/img/background1.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -32,7 +33,9 @@ header {
 }
 
 .logo {
-    height: 50px; /* Ajustá según el tamaño de tu logo */
+    height: 100px;
+    width: 300px;
+    /* Ajustá según el tamaño de tu logo */
 }
 
 /* BOTÓN HAMBURGUESA */
@@ -43,14 +46,16 @@ header {
     width: 35px;
     height: 25px;
     cursor: pointer;
-    z-index: 101; /* Para que quede por encima del menú lateral */
+    z-index: 101;
+    /* Para que quede por encima del menú lateral */
 }
 
 .menu-btn span {
     display: block;
     height: 4px;
     width: 100%;
-    background-color: #f15a24; /* Color naranja de las barritas */
+    background-color: #f15a24;
+    /* Color naranja de las barritas */
     border-radius: 2px;
     transition: 0.3s;
 }
@@ -59,17 +64,19 @@ header {
 .sidebar {
     position: fixed;
     top: 0;
-    right: -250px; /* Escondido por defecto */
+    right: -250px;
+    /* Escondido por defecto */
     width: 250px;
     height: 100vh;
     background-color: #111;
-    padding-top: 80px;
+    padding-top: 120px;
     transition: 0.4s ease;
     z-index: 99;
 }
 
 .sidebar.activa {
-    right: 0; /* Aparece cuando tiene la clase activa */
+    right: 0;
+    /* Aparece cuando tiene la clase activa */
 }
 
 .sidebar ul {
@@ -100,7 +107,8 @@ header {
     align-items: center;
     text-align: center;
     padding: 0 20px;
-    margin-top: 80px; /* Espacio para que el header no tape el texto */
+    margin-top: 80px;
+    /* Espacio para que el header no tape el texto */
 }
 
 .hero-content h1 {
@@ -141,7 +149,7 @@ header {
     justify-content: center;
     align-items: center;
     font-size: 35px;
-    box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
     z-index: 100;
     text-decoration: none;
     transition: transform 0.3s;
@@ -156,8 +164,9 @@ header {
 /* Fondo específico para Servicios */
 body.bg-servicios {
     /* Reemplazá con tu fondo oscuro o el que tiene las estrellas azules */
-    background: url('../assets/img/fondo-servicios.jpg') no-repeat center center fixed;
-    background-color: #0a0a0a; /* Por si la imagen tarda en cargar */
+    background: url('../assets/img/background1.jpg') no-repeat center center fixed;
+    background-color: #0a0a0a;
+    /* Por si la imagen tarda en cargar */
     background-size: cover;
     color: white;
     min-height: 100vh;
@@ -167,7 +176,8 @@ body.bg-servicios {
 
 /* Contenedor principal de la sección */
 .servicios-section {
-    padding: 120px 40px 60px 40px; /* 120px arriba para no chocar con el header */
+    padding: 120px 40px 60px 40px;
+    /* 120px arriba para no chocar con el header */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -184,7 +194,8 @@ body.bg-servicios {
 .servicios-header h2 {
     font-size: 36px;
     text-transform: uppercase;
-    text-align: left; /* Alineado a la izquierda como en tu imagen */
+    text-align: left;
+    /* Alineado a la izquierda como en tu imagen */
 }
 
 /* Grilla de las tarjetas */
@@ -194,26 +205,29 @@ body.bg-servicios {
     gap: 30px;
     width: 100%;
     max-width: 1200px;
-    
+
     /* EL CAMBIO CLAVE: nowrap fuerza una sola fila */
-    flex-wrap: nowrap; 
-    
+    flex-wrap: nowrap;
+
     /* Agregamos esto para que en pantallas chicas se pueda scrollear hacia los lados */
-    overflow-x: auto; 
-    padding-bottom: 15px; /* Da un poco de aire por si aparece la barra de scroll */
+    overflow-x: auto;
+    padding-bottom: 15px;
+    /* Da un poco de aire por si aparece la barra de scroll */
 }
 
 /* Tarjeta individual (Texto + Imagen) */
 .servicio-card {
     display: flex;
     align-items: center;
-    height: 400px; /* Altura de la tarjeta */
+    height: 400px;
+    /* Altura de la tarjeta */
 }
 
 /* Texto rotado */
 .texto-vertical {
     writing-mode: vertical-rl;
-    transform: rotate(180deg); /* Esto hace que se lea de abajo hacia arriba */
+    transform: rotate(180deg);
+    /* Esto hace que se lea de abajo hacia arriba */
     text-align: center;
     font-size: 18px;
     font-weight: bold;
@@ -226,10 +240,12 @@ body.bg-servicios {
 .servicio-card img {
     height: 100%;
     width: 220px;
-    object-fit: cover; /* Evita que la foto se estire o deforme */
+    object-fit: cover;
+    /* Evita que la foto se estire o deforme */
     /* Bordes redondeados: ArribaIzq, ArribaDer, AbajoDer, AbajoIzq */
-    border-radius: 15px 40px 15px 15px; 
-    box-shadow: 0 10px 20px rgba(0,0,0,0.5); /* Sombra para que resalte del fondo */
+    border-radius: 15px 40px 15px 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    /* Sombra para que resalte del fondo */
 }
 
 /* --- PÁGINA DE QUIÉNES SOMOS --- */
@@ -237,8 +253,8 @@ body.bg-servicios {
 /* Fondo específico para Quiénes Somos */
 body.bg-quienes-somos {
     /* Reemplazá con tu fondo oscuro */
-    background: url('../assets/img/fondo-qs.jpg') no-repeat center center fixed;
-    background-color: #050505; 
+    background: url('../assets/img/background1.jpg') no-repeat center center fixed;
+    background-color: #050505;
     background-size: cover;
     color: white;
     min-height: 100vh;
@@ -248,7 +264,7 @@ body.bg-quienes-somos {
 
 /* Contenedor principal de la sección */
 .qs-section {
-    padding: 120px 40px 60px 40px; 
+    padding: 120px 40px 60px 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -272,8 +288,10 @@ body.bg-quienes-somos {
     max-width: 1000px;
     display: flex;
     flex-direction: column;
-    gap: 60px; /* Separación entre el bloque de arriba y el de abajo */
-    position: relative; /* Por si querés posicionar la estrellita naranja de forma absoluta */
+    gap: 60px;
+    /* Separación entre el bloque de arriba y el de abajo */
+    position: relative;
+    /* Por si querés posicionar la estrellita naranja de forma absoluta */
 }
 
 /* Estructura de cada bloque de historia (Foto + Texto) */
@@ -285,7 +303,8 @@ body.bg-quienes-somos {
 
 /* Textos de la historia */
 .qs-texto {
-    flex: 1; /* Toma el espacio restante */
+    flex: 1;
+    /* Toma el espacio restante */
 }
 
 .qs-texto p {
@@ -298,22 +317,24 @@ body.bg-quienes-somos {
 /* --- FORMAS DE LAS IMÁGENES --- */
 /* Las imágenes necesitan un tamaño fijo o max-width para que el borde se vea bien */
 
-.img-forma-1, .img-forma-2 {
-    width: 400px; /* Ajustá el ancho según necesites */
+.img-forma-1,
+.img-forma-2 {
+    width: 400px;
+    /* Ajustá el ancho según necesites */
     height: 300px;
     object-fit: cover;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
 }
 
 /* Foto de arriba: Curvas en Arriba-Der y Abajo-Izq */
 .img-forma-1 {
     /* border-radius: ArribaIzq ArribaDer AbajoDer AbajoIzq */
-    border-radius: 0 80px 0 80px; 
+    border-radius: 0 80px 0 80px;
 }
 
 /* Foto de abajo: Curvas en Arriba-Izq y Abajo-Der */
 .img-forma-2 {
-    border-radius: 80px 0 80px 0; 
+    border-radius: 80px 0 80px 0;
 }
 
 /* Responsividad básica para pantallas chicas */
@@ -321,7 +342,9 @@ body.bg-quienes-somos {
     .qs-bloque {
         flex-direction: column;
     }
-    .img-forma-1, .img-forma-2 {
+
+    .img-forma-1,
+    .img-forma-2 {
         width: 100%;
         height: auto;
     }
@@ -330,8 +353,8 @@ body.bg-quienes-somos {
 /* --- PÁGINA DE PRODUCTOS --- */
 
 body.bg-productos {
-    background: url('../assets/img/fondo-productos.jpg') no-repeat center center fixed;
-    background-color: #050505; 
+    background: url('../assets/img/background1.jpg') no-repeat center center fixed;
+    background-color: #050505;
     background-size: cover;
     color: white;
     min-height: 100vh;
@@ -340,7 +363,7 @@ body.bg-productos {
 }
 
 .productos-section {
-    padding: 120px 40px 60px 40px; 
+    padding: 120px 40px 60px 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -371,41 +394,49 @@ body.bg-productos {
 
 .carousel-container {
     width: 100%;
-    overflow: hidden; /* Oculta los productos que desbordan */
-    padding: 30px 0; /* Espacio para que el producto central pueda crecer sin cortarse */
+    overflow: hidden;
+    /* Oculta los productos que desbordan */
+    padding: 30px 0;
+    /* Espacio para que el producto central pueda crecer sin cortarse */
 }
 
 .carousel-track {
     display: flex;
     transition: transform 0.4s ease-in-out;
-    align-items: center; /* Centra verticalmente */
+    align-items: center;
+    /* Centra verticalmente */
 }
 
 .carousel-item {
-    min-width: 33.333%; /* Muestra exactamente 3 items a la vez */
+    min-width: 33.333%;
+    /* Muestra exactamente 3 items a la vez */
     display: flex;
     justify-content: center;
     transition: all 0.4s ease-in-out;
-    opacity: 0.6; /* Los de los costados se ven un poco apagados */
-    transform: scale(0.85); /* Los de los costados son más chicos */
+    opacity: 0.6;
+    /* Los de los costados se ven un poco apagados */
+    transform: scale(0.85);
+    /* Los de los costados son más chicos */
 }
 
 .carousel-item img {
     width: 100%;
-    max-width: 200px; /* Ancho máximo de los envases */
+    max-width: 200px;
+    /* Ancho máximo de los envases */
     border-radius: 20px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
 
 /* CLASE ACTIVA (Producto del medio) */
 .carousel-item.centro {
     opacity: 1;
-    transform: scale(1.15); /* Crece un 15% */
+    transform: scale(1.15);
+    /* Crece un 15% */
     z-index: 10;
 }
 
 .carousel-item.centro img {
-    box-shadow: 0 15px 30px rgba(0,0,0,0.8);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.8);
 }
 
 /* FLECHAS */
@@ -413,7 +444,8 @@ body.bg-productos {
     background: none;
     border: none;
     color: #f15a24;
-    font-size: 50px; /* Tamaño de la flecha */
+    font-size: 50px;
+    /* Tamaño de la flecha */
     cursor: pointer;
     transition: transform 0.2s, color 0.2s;
     z-index: 20;
@@ -425,14 +457,18 @@ body.bg-productos {
 }
 
 @media (max-width: 768px) {
+
     /* En celulares mostramos 1 solo a la vez */
-    .carousel-item { min-width: 100%; }
+    .carousel-item {
+        min-width: 100%;
+    }
 }
 
 /* --- PÁGINA DE CONTACTO --- */
 
 body.bg-contacto {
-    background-color: #000000; /* Fondo negro puro como en tu diseño */
+    background-color: #000000;
+    /* Fondo negro puro como en tu diseño */
     color: white;
     min-height: 100vh;
     display: flex;
@@ -440,7 +476,7 @@ body.bg-contacto {
 }
 
 .contacto-section {
-    padding: 120px 40px 60px 40px; 
+    padding: 120px 40px 60px 40px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -495,7 +531,8 @@ body.bg-contacto {
     width: 60px;
     height: 60px;
     border: 1px solid white;
-    border-radius: 18px; /* Bordes bien redondeados */
+    border-radius: 18px;
+    /* Bordes bien redondeados */
     color: white;
     font-size: 28px;
     text-decoration: none;
@@ -528,7 +565,8 @@ body.bg-contacto {
     padding: 15px;
     color: white;
     font-size: 16px;
-    text-align: center; /* Centra el texto del placeholder y lo que escribís */
+    text-align: center;
+    /* Centra el texto del placeholder y lo que escribís */
     font-family: inherit;
     outline: none;
     transition: border-color 0.3s;
@@ -573,10 +611,12 @@ body.bg-contacto {
     .contacto-wrapper {
         flex-direction: column;
     }
+
     .contacto-info {
         text-align: center;
         align-items: center;
     }
+
     .redes-grid {
         justify-content: center;
     }
