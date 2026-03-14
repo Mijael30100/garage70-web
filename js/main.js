@@ -13,55 +13,73 @@ menuBtn.addEventListener('click', () => {
 const track = document.getElementById('track');
 
 if (track) {
-    const items = Array.from(track.children);
     const nextBtn = document.getElementById('nextBtn');
     const prevBtn = document.getElementById('prevBtn');
     
-    // Arrancamos con el índice 1 como centro (el segundo producto)
-    let indexCentro = 1; 
-
-    function actualizarCarrusel() {
-        // Sacamos la clase 'centro' a todos
-        items.forEach(item => item.classList.remove('centro'));
+    function reasignarCentro() {
+        const currentItems = Array.from(track.children);
+        currentItems.forEach(item => item.classList.remove('centro'));
         
-        // Se la agregamos al que corresponde
-        items[indexCentro].classList.add('centro');
-
-        // Movemos el track. 
-        // En PC (3 items), para centrar el índice 1, movemos 0.
-        // La fórmula: -(indexCentro - 1) * 100 / cantidadVisible
-        let porcentajeDesplazamiento;
-        
-        if (window.innerWidth <= 768) {
-            // En móvil (1 item visible)
-            porcentajeDesplazamiento = -(indexCentro) * 100;
-        } else {
-            // En PC (3 items visibles, cada uno es 33.333%)
-            porcentajeDesplazamiento = -(indexCentro - 1) * 33.333;
-        }
-
-        track.style.transform = `translateX(${porcentajeDesplazamiento}%)`;
+        let centroIdx = window.innerWidth <= 768 ? 0 : 1;
+        currentItems[centroIdx].classList.add('centro');
     }
 
-    // Botón Siguiente
+    reasignarCentro();
+
+    let enTransicion = false;
+
     nextBtn.addEventListener('click', () => {
-        if (indexCentro < items.length - 2) { // Evita pasarse de largo al final
-            indexCentro++;
-            actualizarCarrusel();
-        }
+        if (enTransicion) return;
+        enTransicion = true;
+
+        let desplazamiento = window.innerWidth <= 768 ? -100 : -33.3333;
+        
+        track.style.transition = 'transform 0.4s ease-in-out';
+        track.style.transform = `translateX(${desplazamiento}%)`;
+
+        const currentItems = Array.from(track.children);
+        currentItems.forEach(item => item.classList.remove('centro'));
+        let centroIdxFuturo = window.innerWidth <= 768 ? 1 : 2;
+        currentItems[centroIdxFuturo].classList.add('centro');
+
+        setTimeout(() => {
+            track.style.transition = 'none';
+            track.appendChild(track.firstElementChild);
+            track.style.transform = 'translateX(0)';
+            reasignarCentro();
+            enTransicion = false;
+        }, 400); 
     });
 
-    // Botón Anterior
     prevBtn.addEventListener('click', () => {
-        if (indexCentro > 1) { // Evita pasarse de largo al inicio
-            indexCentro--;
-            actualizarCarrusel();
-        }
-    });
+        if (enTransicion) return;
+        enTransicion = true;
 
-    // Ejecutamos una vez al cargar para acomodar la vista inicial
-    actualizarCarrusel();
+        track.prepend(track.lastElementChild);
+        
+        track.style.transition = 'none';
+        let desplazamiento = window.innerWidth <= 768 ? -100 : -33.3333;
+        track.style.transform = `translateX(${desplazamiento}%)`;
+
+        track.offsetHeight;
+
+        track.style.transition = 'transform 0.4s ease-in-out';
+        track.style.transform = 'translateX(0)';
+
+        const currentItems = Array.from(track.children);
+        currentItems.forEach(item => item.classList.remove('centro'));
+        let centroIdxFuturo = window.innerWidth <= 768 ? 0 : 1;
+        currentItems[centroIdxFuturo].classList.add('centro');
+
+        setTimeout(() => {
+            reasignarCentro();
+            enTransicion = false;
+        }, 400);
+    });
     
-    // Si cambian el tamaño de la ventana, recalculamos
-    window.addEventListener('resize', actualizarCarrusel);
+    window.addEventListener('resize', () => {
+        track.style.transition = 'none';
+        track.style.transform = 'translateX(0)';
+        reasignarCentro();
+    });
 }

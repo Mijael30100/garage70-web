@@ -25,17 +25,24 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px;
+    padding: 10px 40px;
     width: 100%;
-    position: fixed;
+    position: absolute;
     top: 0;
     z-index: 100;
+    pointer-events: none; /* Allows clicking through the empty space to the menu under it */
+}
+
+/* Ensure children are still clickable */
+header .logo-container,
+header .menu-btn {
+    pointer-events: auto;
 }
 
 .logo {
-    height: 100px;
-    width: 300px;
-    /* Ajustá según el tamaño de tu logo */
+    height: auto;
+    width: 450px;
+    max-width: 100%;
 }
 
 /* BOTÓN HAMBURGUESA */
@@ -107,7 +114,7 @@ header {
     align-items: center;
     text-align: center;
     padding: 0 20px;
-    margin-top: 80px;
+    margin-top: 180px;
     /* Espacio para que el header no tape el texto */
 }
 
@@ -176,8 +183,8 @@ body.bg-servicios {
 
 /* Contenedor principal de la sección */
 .servicios-section {
-    padding: 120px 40px 60px 40px;
-    /* 120px arriba para no chocar con el header */
+    padding: 180px 40px 60px 40px;
+    /* 180px arriba para no chocar con el header */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -264,7 +271,7 @@ body.bg-quienes-somos {
 
 /* Contenedor principal de la sección */
 .qs-section {
-    padding: 120px 40px 60px 40px;
+    padding: 180px 40px 60px 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -363,7 +370,7 @@ body.bg-productos {
 }
 
 .productos-section {
-    padding: 120px 40px 60px 40px;
+    padding: 180px 40px 60px 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -476,7 +483,7 @@ body.bg-contacto {
 }
 
 .contacto-section {
-    padding: 120px 40px 60px 40px;
+    padding: 180px 40px 60px 40px;
     display: flex;
     justify-content: center;
     align-items: center;
