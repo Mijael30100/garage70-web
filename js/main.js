@@ -20,7 +20,7 @@ if (track) {
         const currentItems = Array.from(track.children);
         currentItems.forEach(item => item.classList.remove('centro'));
         
-        let centroIdx = window.innerWidth <= 768 ? 0 : 1;
+        let centroIdx = 1;
         currentItems[centroIdx].classList.add('centro');
     }
 
@@ -32,14 +32,14 @@ if (track) {
         if (enTransicion) return;
         enTransicion = true;
 
-        let desplazamiento = window.innerWidth <= 768 ? -100 : -33.3333;
+        let desplazamiento = -33.3333;
         
         track.style.transition = 'transform 0.4s ease-in-out';
         track.style.transform = `translateX(${desplazamiento}%)`;
 
         const currentItems = Array.from(track.children);
         currentItems.forEach(item => item.classList.remove('centro'));
-        let centroIdxFuturo = window.innerWidth <= 768 ? 1 : 2;
+        let centroIdxFuturo = 2;
         currentItems[centroIdxFuturo].classList.add('centro');
 
         setTimeout(() => {
@@ -58,7 +58,7 @@ if (track) {
         track.prepend(track.lastElementChild);
         
         track.style.transition = 'none';
-        let desplazamiento = window.innerWidth <= 768 ? -100 : -33.3333;
+        let desplazamiento = -33.3333;
         track.style.transform = `translateX(${desplazamiento}%)`;
 
         track.offsetHeight;
@@ -68,7 +68,7 @@ if (track) {
 
         const currentItems = Array.from(track.children);
         currentItems.forEach(item => item.classList.remove('centro'));
-        let centroIdxFuturo = window.innerWidth <= 768 ? 0 : 1;
+        let centroIdxFuturo = 1;
         currentItems[centroIdxFuturo].classList.add('centro');
 
         setTimeout(() => {

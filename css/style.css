@@ -9,15 +9,36 @@
 
 /* Fondos dinámicos por página */
 body.bg-inicio {
-    /* Reemplazá con la ruta de tu foto de fondo */
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../assets/img/background1.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    background-color: #000;
     color: white;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    position: relative;
+}
+
+/* VIDEO BACKGROUND INDEX */
+.video-background {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: -2;
+    object-fit: cover;
+}
+
+.video-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: -1;
 }
 
 /* NAVBAR */
@@ -30,7 +51,8 @@ header {
     position: absolute;
     top: 0;
     z-index: 100;
-    pointer-events: none; /* Allows clicking through the empty space to the menu under it */
+    pointer-events: none;
+    /* Allows clicking through the empty space to the menu under it */
 }
 
 /* Ensure children are still clickable */
@@ -260,7 +282,7 @@ body.bg-servicios {
 /* Fondo específico para Quiénes Somos */
 body.bg-quienes-somos {
     /* Reemplazá con tu fondo oscuro */
-    background: url('../assets/img/background1.jpg') no-repeat center center fixed;
+    background: url('../assets/img/background2.jpg') no-repeat center center fixed;
     background-color: #050505;
     background-size: cover;
     color: white;
@@ -463,13 +485,7 @@ body.bg-productos {
     transform: scale(1.1);
 }
 
-@media (max-width: 768px) {
 
-    /* En celulares mostramos 1 solo a la vez */
-    .carousel-item {
-        min-width: 100%;
-    }
-}
 
 /* --- PÁGINA DE CONTACTO --- */
 
@@ -523,10 +539,9 @@ body.bg-contacto {
     letter-spacing: 1px;
 }
 
-/* Grilla de Redes 2x2 */
+/* Grilla de Redes */
 .redes-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 60px);
+    display: flex;
     gap: 15px;
     margin-top: 15px;
 }
@@ -615,6 +630,42 @@ body.bg-contacto {
 
 /* Responsividad para móviles */
 @media (max-width: 768px) {
+
+    /* Logo más pequeño para que no choque con menú */
+    .logo {
+        width: 250px;
+    }
+
+    .servicios-section, .qs-section, .productos-section, .contacto-section {
+        padding: 130px 15px 40px 15px;
+    }
+
+    /* Grilla de servicios en 2 filas y 2 columnas */
+    .servicios-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .servicio-card {
+        height: 220px;
+        width: 100%;
+    }
+
+    .servicio-card img {
+        width: auto;
+        flex: 1;
+        min-width: 0;
+        border-radius: 10px 25px 10px 10px;
+    }
+
+    .texto-vertical {
+        font-size: 13px;
+        margin-right: 5px;
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
     .contacto-wrapper {
         flex-direction: column;
     }
